@@ -1,6 +1,6 @@
 # Visual Studio Code Extension Inventory
 
-**Author**: Replicated by AI  
+**Author**: Jean-Marc ALBERT aka WikiJM
 **Date**: 2026-02-18  
 **Platform**: Windows
 
