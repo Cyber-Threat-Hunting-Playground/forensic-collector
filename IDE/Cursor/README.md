@@ -1,6 +1,6 @@
 # Cursor Extension Inventory
 
-**Author**: Replicated from Visual Studio Code Extensions (Jean-Marc ALBERT)  
+**Author**: Jean-Marc ALBERT aka WikiJM
 **Date**: 2026-03-12  
 **Platform**: Windows, macOS
 
