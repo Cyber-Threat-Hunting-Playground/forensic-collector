@@ -27,6 +27,33 @@ See: `IDE/Visual Studio Code/README.md` for detailed fields, example JSON, and u
 
 See: `IDE/Cursor/README.md` for detailed fields, example JSON, and usage.
 
+#### Google Antigravity (Windows + macOS)
+- **Path:** `IDE/Google Antigravity/`
+- **Collectors:**
+  - Windows: PowerShell extension inventory
+  - macOS: Bash extension inventory
+- **Output:** JSON + log file (supports RemoteOps output directory when available)
+
+See: `IDE/Google Antigravity/README.md` for detailed fields, example JSON, and usage.
+
+#### Windsurf (Windows + macOS)
+- **Path:** `IDE/Windsurf/`
+- **Collectors:**
+  - Windows: PowerShell extension inventory
+  - macOS: Bash extension inventory
+- **Output:** JSON + log file (supports RemoteOps output directory when available)
+
+See: `IDE/Windsurf/README.md` for detailed fields, example JSON, and usage.
+
+#### VSCodium (Windows + macOS)
+- **Path:** `IDE/VSCodium/`
+- **Collectors:**
+  - Windows: PowerShell extension inventory
+  - macOS: Bash extension inventory
+- **Output:** JSON + log file (supports RemoteOps output directory when available)
+
+See: `IDE/VSCodium/README.md` for detailed fields, example JSON, and usage.
+
 ## Output conventions (recommended)
 
 Collectors in this repo aim to follow a consistent pattern:
@@ -43,6 +70,9 @@ Start by browsing the sub-folder documentation:
 
 - `IDE/Visual Studio Code/README.md`
 - `IDE/Cursor/README.md`
+- `IDE/Google Antigravity/README.md`
+- `IDE/Windsurf/README.md`
+- `IDE/VSCodium/README.md`
 
 ## Roadmap / adding new collectors
 
