@@ -265,9 +265,9 @@ Write-Log -Message "Log file: $script:LogFilePath"
 $userProfiles = Get-UserProfiles
 Write-Log -Message "Found $($userProfiles.Count) user profile(s) to scan."
 
-# Cursor stores extensions in AppData\Roaming\Cursor\User\extensions
+# Cursor stores extensions in .cursor\extensions (at the root of each user profile)
 $allExtensions = @()
-$allExtensions += Get-CursorExtensions -UserProfiles $userProfiles -ProductName "Cursor" -RelativeExtensionsPath "AppData\Roaming\Cursor\User\extensions"
+$allExtensions += Get-CursorExtensions -UserProfiles $userProfiles -ProductName "Cursor" -RelativeExtensionsPath ".cursor\extensions"
 
 Write-Log -Message "Total extensions found: $($allExtensions.Count)"
 
