@@ -2,9 +2,9 @@
 
 A growing collection of small, focused collectors that gather forensic artifacts and endpoint telemetry that may not be captured by deployed security tooling.
 
-## What’s in this repository (today)
+## What's in this repository (today)
 
-This repo currently contains IDE-focused collectors that inventory installed extensions across local user profiles and export results as JSON for investigation, auditing, and baseline tracking.
+This repo currently contains IDE-focused collectors and package manager collectors that inventory installed extensions/packages across local user profiles and export results as JSON for investigation, auditing, and baseline tracking.
 
 ### IDE collectors
 
@@ -54,6 +54,17 @@ See: `IDE/Windsurf/README.md` for detailed fields, example JSON, and usage.
 
 See: `IDE/VSCodium/README.md` for detailed fields, example JSON, and usage.
 
+### Package Manager collectors
+
+#### NPM Packages (Windows + macOS)
+- **Path:** `Packages/NPM/`
+- **Collectors:**
+  - Windows: PowerShell package inventory
+  - macOS: Bash package inventory
+- **Output:** JSON + log file (supports RemoteOps output directory when available)
+
+See: `Packages/NPM/README.md` for detailed fields, example JSON, and usage.
+
 ## Output conventions (recommended)
 
 Collectors in this repo aim to follow a consistent pattern:
@@ -73,12 +84,13 @@ Start by browsing the sub-folder documentation:
 - `IDE/Google Antigravity/README.md`
 - `IDE/Windsurf/README.md`
 - `IDE/VSCodium/README.md`
+- `Packages/NPM/README.md`
 
 ## Roadmap / adding new collectors
 
 This repository is intended to grow over time. Contributions should:
 
-1. Create a new folder under a clear category (examples: `IDE/`, `Browsers/`, `Persistence/`, `Networking/`, `Cloud/`, `EDR/`, `OS/Windows/`, `OS/macOS/`).
+1. Create a new folder under a clear category (examples: `IDE/`, `Browsers/`, `Persistence/`, `Networking/`, `Cloud/`, `EDR/`, `OS/Windows/`, `OS/macOS/`, `Packages/`).
 2. Include:
    - The collector script(s)
    - A per-collector `README.md` describing:
