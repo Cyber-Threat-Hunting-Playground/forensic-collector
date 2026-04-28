@@ -6,64 +6,16 @@ A growing collection of small, focused collectors that gather forensic artifacts
 
 This repo currently contains IDE-focused collectors and package manager collectors that inventory installed extensions/packages across local user profiles and export results as JSON for investigation, auditing, and baseline tracking.
 
-### IDE collectors
+| Category | Collector | Path | Platforms | Documentation |
+|----------|-----------|------|-----------|---|
+| **IDE** | Visual Studio Code | `IDE/Visual Studio Code/` | Windows | [README](IDE/Visual%20Studio%20Code/README.md) |
+| **IDE** | Cursor | `IDE/Cursor/` | Windows, macOS | [README](IDE/Cursor/README.md) |
+| **IDE** | Google Antigravity | `IDE/Google Antigravity/` | Windows, macOS | [README](IDE/Google%20Antigravity/README.md) |
+| **IDE** | Windsurf | `IDE/Windsurf/` | Windows, macOS | [README](IDE/Windsurf/README.md) |
+| **IDE** | VSCodium | `IDE/VSCodium/` | Windows, macOS | [README](IDE/VSCodium/README.md) |
+| **Packages** | NPM Packages | `Packages/NPM/` | Windows, macOS | [README](Packages/NPM/README.md) |
 
-#### Visual Studio Code (Windows)
-- **Path:** `IDE/Visual Studio Code/`
-- **Collectors:**
-  - PowerShell script to inventory extensions for:
-    - VS Code (`.vscode\extensions`)
-    - VS Code - Insiders (`.vscode-insiders\extensions`)
-- **Output:** JSON + log file (supports RemoteOps output directory when available)
-
-See: `IDE/Visual Studio Code/README.md` for detailed fields, example JSON, and usage.
-
-#### Cursor (Windows + macOS)
-- **Path:** `IDE/Cursor/`
-- **Collectors:**
-  - Windows: PowerShell extension inventory
-  - macOS: Bash extension inventory
-- **Output:** JSON + log file (supports RemoteOps output directory when available)
-
-See: `IDE/Cursor/README.md` for detailed fields, example JSON, and usage.
-
-#### Google Antigravity (Windows + macOS)
-- **Path:** `IDE/Google Antigravity/`
-- **Collectors:**
-  - Windows: PowerShell extension inventory
-  - macOS: Bash extension inventory
-- **Output:** JSON + log file (supports RemoteOps output directory when available)
-
-See: `IDE/Google Antigravity/README.md` for detailed fields, example JSON, and usage.
-
-#### Windsurf (Windows + macOS)
-- **Path:** `IDE/Windsurf/`
-- **Collectors:**
-  - Windows: PowerShell extension inventory
-  - macOS: Bash extension inventory
-- **Output:** JSON + log file (supports RemoteOps output directory when available)
-
-See: `IDE/Windsurf/README.md` for detailed fields, example JSON, and usage.
-
-#### VSCodium (Windows + macOS)
-- **Path:** `IDE/VSCodium/`
-- **Collectors:**
-  - Windows: PowerShell extension inventory
-  - macOS: Bash extension inventory
-- **Output:** JSON + log file (supports RemoteOps output directory when available)
-
-See: `IDE/VSCodium/README.md` for detailed fields, example JSON, and usage.
-
-### Package Manager collectors
-
-#### NPM Packages (Windows + macOS)
-- **Path:** `Packages/NPM/`
-- **Collectors:**
-  - Windows: PowerShell package inventory
-  - macOS: Bash package inventory
-- **Output:** JSON + log file (supports RemoteOps output directory when available)
-
-See: `Packages/NPM/README.md` for detailed fields, example JSON, and usage.
+All collectors output **JSON + log file** format with support for RemoteOps output directory when available.
 
 ## Output conventions (recommended)
 
@@ -77,14 +29,7 @@ Collectors in this repo aim to follow a consistent pattern:
 ## How to use
 
 Each collector folder contains its own README with prerequisites and commands.
-Start by browsing the sub-folder documentation:
-
-- `IDE/Visual Studio Code/README.md`
-- `IDE/Cursor/README.md`
-- `IDE/Google Antigravity/README.md`
-- `IDE/Windsurf/README.md`
-- `IDE/VSCodium/README.md`
-- `Packages/NPM/README.md`
+Start by browsing the sub-folder documentation using the links in the table above.
 
 ## Roadmap / adding new collectors
 
