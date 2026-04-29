@@ -4,7 +4,7 @@ A growing collection of small, focused collectors that gather forensic artifacts
 
 ## What's in this repository (today)
 
-This repo currently contains IDE-focused collectors and package manager collectors that inventory installed extensions/packages across local user profiles and export results as JSON for investigation, auditing, and baseline tracking.
+This repo contains focused collectors that inventory endpoint artifacts across local user profiles and export results as JSON (plus a log file) for investigation and threat hunting.
 
 | Category | Collector | Path | Platforms | Documentation |
 |----------|-----------|------|-----------|---|
@@ -14,8 +14,18 @@ This repo currently contains IDE-focused collectors and package manager collecto
 | **IDE** | Windsurf | `IDE/Windsurf/` | Windows, macOS | [README](IDE/Windsurf/README.md) |
 | **IDE** | VSCodium | `IDE/VSCodium/` | Windows, macOS | [README](IDE/VSCodium/README.md) |
 | **Packages** | NPM Packages | `Packages/NPM/` | Windows, macOS | [README](Packages/NPM/README.md) |
+| **Forensics** | Clipboard Content + Metadata | `Clipboard/` | Windows | [README](Clipboard/README.md) |
+| **Forensics** | Download URLs from `Zone.Identifier` ADS | `Download URLs from Zone.Identifier ADS/` | Windows | [README](Download%20URLs%20from%20Zone.Identifier%20ADS/README.md) |
 
 All collectors output **JSON + log file** format with support for RemoteOps output directory when available.
+
+## Dashboards
+
+Some collectors include ready-to-import dashboards to accelerate analysis.
+
+| Platform | Collector | Dashboard file |
+|----------|----------|----------------|
+| SentinelOne | Download URLs from `Zone.Identifier` ADS | `Download URLs from Zone.Identifier ADS/SentinelOne--dashboard--collect_download_urls_from_zone_identifier.json` |
 
 ## Output conventions (recommended)
 
@@ -29,13 +39,13 @@ Collectors in this repo aim to follow a consistent pattern:
 ## How to use
 
 Each collector folder contains its own README with prerequisites and commands.
-Start by browsing the sub-folder documentation using the links in the table above.
+Start by browsing the sub-folder documentation using the links in the tables above.
 
 ## Roadmap / adding new collectors
 
 This repository is intended to grow over time. Contributions should:
 
-1. Create a new folder under a clear category (examples: `IDE/`, `Browsers/`, `Persistence/`, `Networking/`, `Cloud/`, `EDR/`, `OS/Windows/`, `OS/macOS/`, `Packages/`).
+1. Create a new folder under a clear category (examples: `IDE/`, `Browsers/`, `Persistence/`, `Networking/`, `Cloud/`, `EDR/`, `OS/Windows/`, `OS/macOS/`, `Packages/`, `Forensics/`).
 2. Include:
    - The collector script(s)
    - A per-collector `README.md` describing:
