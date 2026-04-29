@@ -164,10 +164,50 @@ To include a timestamp in the output file names:
 
 ---
 
+## SentinelOne Dashboard
+
+A SentinelOne dashboard configuration is included to visualize forensic collection results. The dashboard provides six key visualizations for hunting and forensic analysis:
+
+### Dashboard Visualizations
+
+1. **Downloaded Files with URL Metadata by User**
+   - Pie chart showing count of files with Zone.Identifier URL metadata grouped by user
+   - Helps identify which users have downloaded files with captured metadata
+
+2. **Downloaded Files by Host Domain**
+   - Pie chart aggregating downloaded files by their source domain
+   - Useful for identifying suspicious or known malicious download sources
+
+3. **All Downloaded Files with Zone.Identifier URLs**
+   - Tabular view of all downloaded files containing Zone.Identifier metadata
+   - Columns include user, filename, extension, and host domain
+   - Supports detailed forensic investigation
+
+4. **Potentially Executable Downloads**
+   - Filtered view of downloads with executable extensions (.exe, .msi, .dll, .ps1, .bat, .cmd, .vbs, .js, .jar, etc.)
+   - Highlights risky file types frequently used in attacks
+   - Includes user, filename, extension, and source domain for threat assessment
+
+5. **Records Without Host Domain**
+   - Identifies records where the host domain could not be extracted
+   - Useful for troubleshooting data collection or identifying obfuscated downloads
+
+6. **Endpoint Metadata**
+   - Displays endpoint information from the collection process
+   - Shows hostname, OS, OS version, OS build, and collection date
+   - Provides context for when and where data was collected
+
+### Dashboard File
+
+- `SentinelOne--dashboard--collect_download_urls_from_zone_identifier.json`
+
+Import this dashboard in SentinelOne to enable real-time visualization of collected forensic artifacts across your fleet.
+
+---
+
 ## Notes and Limitations
 
 - Not all files have a `Zone.Identifier` stream (e.g., locally created files, copied files, stripped ADS).
 - Some archive extraction workflows remove or do not propagate ADS metadata.
 - Encrypted filesystems, non-NTFS targets, or tool-based file transfers may not preserve ADS.
 - Running without admin rights may reduce coverage across user profiles.
-
