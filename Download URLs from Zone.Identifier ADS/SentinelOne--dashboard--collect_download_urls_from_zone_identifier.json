@@ -1,0 +1,94 @@
+{
+  "graphs": [
+    {
+      "graphStyle": "pie",
+      "maxPieSlices": 15,
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'DownloadedFileInfo'\n| group NbFiles=count() by DownloadedFileUser",
+      "title": "Downloaded Files with URL Metadata by User",
+      "layout": {
+        "h": 18,
+        "i": "0",
+        "minH": 3,
+        "minW": 6,
+        "w": 25,
+        "x": 0,
+        "y": 0
+      },
+      "dataLabelType": "VALUE"
+    },
+    {
+      "graphStyle": "pie",
+      "maxPieSlices": 12,
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'DownloadedFileInfo'\n| group NbFiles=count() by DownloadedFileHostDomain",
+      "title": "Downloaded Files by Host Domain",
+      "layout": {
+        "h": 18,
+        "i": "1",
+        "minH": 3,
+        "minW": 6,
+        "w": 25,
+        "x": 0,
+        "y": 18
+      },
+      "dataLabelType": "VALUE"
+    },
+    {
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'DownloadedFileInfo'\n| columns DownloadedFileUser, DownloadedFileName, DownloadedFileExtension, DownloadedFileHostDomain, DownloadedFileHostUrl, DownloadedFileReferrerDomain, DownloadedFileZoneId, DownloadedFileSize, DownloadedFileModified\n| sort -DownloadedFileModified",
+      "title": "All Downloaded Files with Zone.Identifier URLs",
+      "layout": {
+        "h": 18,
+        "i": "2",
+        "minH": 3,
+        "minW": 6,
+        "w": 34,
+        "x": 25,
+        "y": 0
+      },
+      "graphStyle": ""
+    },
+    {
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'DownloadedFileInfo' DownloadedFileExtension in ('.exe', '.msi', '.dll', '.ps1', '.bat', '.cmd', '.vbs', '.js', '.jar', '.scr', '.hta')\n| columns DownloadedFileUser, DownloadedFileName, DownloadedFileExtension, DownloadedFileHostDomain, DownloadedFileHostUrl, DownloadedFileReferrerUrl, DownloadedFilePath, DownloadedFileModified\n| sort -DownloadedFileModified",
+      "title": "Potentially Executable Downloads",
+      "layout": {
+        "h": 18,
+        "i": "3",
+        "minH": 3,
+        "minW": 6,
+        "w": 34,
+        "x": 25,
+        "y": 18
+      },
+      "graphStyle": ""
+    },
+    {
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'DownloadedFileInfo' DownloadedFileHostDomain = ''\n| columns DownloadedFileUser, DownloadedFileName, DownloadedFilePath, DownloadedFileReferrerUrl, DownloadedFileZoneId, DownloadedFileModified\n| sort -DownloadedFileModified",
+      "title": "Records Without Host Domain",
+      "layout": {
+        "h": 18,
+        "i": "4",
+        "minH": 3,
+        "minW": 6,
+        "w": 59,
+        "x": 0,
+        "y": 36
+      },
+      "graphStyle": ""
+    },
+    {
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'EndpointInfo'\n| columns EndpointHostname, EndpointOS, EndpointOSVersion, EndpointOSBuild, EndpointCollectionDate",
+      "title": "Endpoint Metadata",
+      "layout": {
+        "h": 12,
+        "i": "5",
+        "minH": 3,
+        "minW": 6,
+        "w": 59,
+        "x": 0,
+        "y": 54
+      },
+      "graphStyle": ""
+    }
+  ],
+  "description": "Inventory of download URLs extracted from Zone.Identifier ADS for files in user Downloads folders"
+}
+
