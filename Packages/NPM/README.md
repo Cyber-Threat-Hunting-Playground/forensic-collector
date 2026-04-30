@@ -258,6 +258,53 @@ To include a timestamp in the output file names:
 
 ---
 
+## SentinelOne Dashboard
+
+A SentinelOne dashboard configuration is included to visualize forensic collection results. The dashboard provides eight key visualizations for hunting, auditing, and compliance analysis:
+
+### Dashboard Visualizations
+
+1. **NPM Packages by User**
+   - Pie chart showing count of installed npm packages grouped by user
+   - Helps identify which users have the most packages and spot outliers
+
+2. **NPM Packages by Source (npm, nvm, fnm, Volta, n)**
+   - Pie chart aggregating packages by their installation source
+   - Reveals the distribution of version managers and install methods across the fleet
+
+3. **NPM Packages by License**
+   - Pie chart grouping packages by their declared license
+   - Supports license compliance auditing and identification of unlicensed or restrictively licensed packages
+
+4. **NPM Packages by Node.js Version**
+   - Pie chart breaking down packages by the associated Node.js version
+   - Useful for identifying outdated or unsupported Node.js runtimes still in use
+
+5. **All NPM Packages Inventory**
+   - Tabular view of every collected package with key columns: user, name, version, scope, source, license, binary flag, Node.js version, and last modified date
+   - Sorted by last modified for quick triage of recent changes
+
+6. **Packages with CLI Binaries**
+   - Filtered view of packages that declare a `bin` entry (CLI executables)
+   - Security-focused: highlights packages that install globally accessible binaries, with author, homepage, and install path details
+
+7. **Recently Modified Packages (Full Details)**
+   - Expanded tabular view including description, homepage, install date, and last modified timestamps
+   - Supports timeline analysis and detection of recently tampered or newly installed packages
+
+8. **Endpoint Metadata**
+   - Displays endpoint information from the collection process
+   - Shows hostname, OS, OS version, OS build, and collection date
+   - Provides context for when and where data was collected
+
+### Dashboard File
+
+- `SentinelOne--dashboard--collect_npm_packages.json`
+
+Import this dashboard in SentinelOne to enable real-time visualization of collected npm package inventories across your fleet.
+
+---
+
 ## Notes and Limitations
 
 - If `package.json` is missing or unreadable, the script still emits a record using the folder name as the package name.

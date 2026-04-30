@@ -1,0 +1,125 @@
+{
+  "graphs": [
+    {
+      "graphStyle": "pie",
+      "maxPieSlices": 15,
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'PackageInfo'\n| group NbPackages=count() by PackageUser",
+      "title": "NPM Packages by User",
+      "layout": {
+        "h": 18,
+        "i": "0",
+        "minH": 3,
+        "minW": 6,
+        "w": 20,
+        "x": 0,
+        "y": 0
+      },
+      "dataLabelType": "VALUE"
+    },
+    {
+      "graphStyle": "pie",
+      "maxPieSlices": 12,
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'PackageInfo'\n| group NbPackages=count() by PackageSource",
+      "title": "NPM Packages by Source (npm, nvm, fnm, Volta, n)",
+      "layout": {
+        "h": 18,
+        "i": "1",
+        "minH": 3,
+        "minW": 6,
+        "w": 20,
+        "x": 0,
+        "y": 18
+      },
+      "dataLabelType": "VALUE"
+    },
+    {
+      "graphStyle": "pie",
+      "maxPieSlices": 15,
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'PackageInfo'\n| group NbPackages=count() by PackageLicense",
+      "title": "NPM Packages by License",
+      "layout": {
+        "h": 18,
+        "i": "2",
+        "minH": 3,
+        "minW": 6,
+        "w": 19,
+        "x": 20,
+        "y": 0
+      },
+      "dataLabelType": "VALUE"
+    },
+    {
+      "graphStyle": "pie",
+      "maxPieSlices": 10,
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'PackageInfo'\n| group NbPackages=count() by PackageNodeVersion",
+      "title": "NPM Packages by Node.js Version",
+      "layout": {
+        "h": 18,
+        "i": "3",
+        "minH": 3,
+        "minW": 6,
+        "w": 19,
+        "x": 20,
+        "y": 18
+      },
+      "dataLabelType": "VALUE"
+    },
+    {
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'PackageInfo'\n| columns PackageUser, PackageName, PackageVersion, PackageScope, PackageSource, PackageLicense, PackageHasBin, PackageNodeVersion, PackageLastModified\n| sort -PackageLastModified",
+      "title": "All NPM Packages Inventory",
+      "layout": {
+        "h": 18,
+        "i": "4",
+        "minH": 3,
+        "minW": 6,
+        "w": 20,
+        "x": 39,
+        "y": 0
+      },
+      "graphStyle": ""
+    },
+    {
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'PackageInfo' PackageHasBin = 'true'\n| columns PackageUser, PackageName, PackageVersion, PackageSource, PackageAuthor, PackageHomepage, PackageInstallPath, PackageLastModified\n| sort -PackageLastModified",
+      "title": "Packages with CLI Binaries",
+      "layout": {
+        "h": 18,
+        "i": "5",
+        "minH": 3,
+        "minW": 6,
+        "w": 20,
+        "x": 39,
+        "y": 18
+      },
+      "graphStyle": ""
+    },
+    {
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'PackageInfo'\n| columns PackageUser, PackageName, PackageVersion, PackageSource, PackageAuthor, PackageDescription, PackageHomepage, PackageInstallPath, PackageInstallDate, PackageLastModified\n| sort -PackageLastModified",
+      "title": "Recently Modified Packages (Full Details)",
+      "layout": {
+        "h": 18,
+        "i": "6",
+        "minH": 3,
+        "minW": 6,
+        "w": 59,
+        "x": 0,
+        "y": 36
+      },
+      "graphStyle": ""
+    },
+    {
+      "query": "task.type = 'RemoteOps' artifact.type != 'stdout' RecordType = 'EndpointInfo'\n| columns EndpointHostname, EndpointOS, EndpointOSVersion, EndpointOSBuild, EndpointCollectionDate",
+      "title": "Endpoint Metadata",
+      "layout": {
+        "h": 12,
+        "i": "7",
+        "minH": 3,
+        "minW": 6,
+        "w": 59,
+        "x": 0,
+        "y": 54
+      },
+      "graphStyle": ""
+    }
+  ],
+  "description": "Inventory of globally installed npm packages collected across user profiles, version managers (nvm, fnm, Volta, n), and system-wide Node.js installations"
+}

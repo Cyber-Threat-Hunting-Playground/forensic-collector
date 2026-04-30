@@ -13,7 +13,7 @@ This repo contains focused collectors that inventory endpoint artifacts across l
 | **IDE** | Google Antigravity | `IDE/Google Antigravity/` | Windows, macOS | [README](IDE/Google%20Antigravity/README.md) |
 | **IDE** | Windsurf | `IDE/Windsurf/` | Windows, macOS | [README](IDE/Windsurf/README.md) |
 | **IDE** | VSCodium | `IDE/VSCodium/` | Windows, macOS | [README](IDE/VSCodium/README.md) |
-| **Packages** | NPM Packages | `Packages/NPM/` | Windows, macOS | [README](Packages/NPM/README.md) |
+| **Packages** | NPM Packages | `Packages/NPM/` | Windows, macOS, Linux | [README](Packages/NPM/README.md) |
 | **Forensics** | Clipboard Content + Metadata | `Clipboard/` | Windows | [README](Clipboard/README.md) |
 | **Forensics** | Download URLs from `Zone.Identifier` ADS | `Download URLs from Zone.Identifier ADS/` | Windows | [README](Download%20URLs%20from%20Zone.Identifier%20ADS/README.md) |
 
@@ -26,6 +26,7 @@ Some collectors include ready-to-import dashboards to accelerate analysis.
 | Platform | Collector | Dashboard file |
 |----------|----------|----------------|
 | SentinelOne | Download URLs from `Zone.Identifier` ADS | `Download URLs from Zone.Identifier ADS/SentinelOne--dashboard--collect_download_urls_from_zone_identifier.json` |
+| SentinelOne | NPM Packages | `Packages/NPM/SentinelOne--dashboard--collect_npm_packages.json` |
 
 ## Output conventions (recommended)
 
