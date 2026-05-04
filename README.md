@@ -13,6 +13,7 @@ This repo contains focused collectors that inventory endpoint artifacts across l
 | **IDE** | Google Antigravity | `IDE/Google Antigravity/` | ✅ | ✅ | | [README](IDE/Google%20Antigravity/README.md) |
 | **IDE** | Windsurf | `IDE/Windsurf/` | ✅ | ✅ | | [README](IDE/Windsurf/README.md) |
 | **IDE** | VSCodium | `IDE/VSCodium/` | ✅ | ✅ | | [README](IDE/VSCodium/README.md) |
+| **IDE** | IDE Logs (VS Code, Cursor, VSCodium) | `IDE/Logs/` | ✅ | ✅ | ✅ | [README](IDE/Logs/README.md) |
 | **Packages** | NPM Packages | `Packages/NPM/` | ✅ | ✅ | ✅ | [README](Packages/NPM/README.md) |
 | **Forensics** | Clipboard Content + Metadata | `Clipboard/` | ✅ | | | [README](Clipboard/README.md) |
 | **Forensics** | Download URLs from `Zone.Identifier` ADS | `Download URLs from Zone.Identifier ADS/` | ✅ | | | [README](Download%20URLs%20from%20Zone.Identifier%20ADS/README.md) |
